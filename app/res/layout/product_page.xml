@@ -1,0 +1,181 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F8F2"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Product Card -->
+        <include layout="@layout/content_main" />
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="24dp"
+            android:background="#D6E8D0" />
+
+        <!-- Customer Feedback -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#EAF4E2"
+            android:padding="20dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What Our Customers Say"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#295818"
+                android:gravity="center"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="❝ Absolutely loved the quality and finish! Worth every rupee. ❞"
+                android:textColor="#5C351C"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="— Riya Mehra"
+                android:gravity="center"
+                android:textColor="#7B563B"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Newsletter Sign-Up -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#DCECD5"
+            android:padding="20dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stay in the Loop"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#295818"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/newsletterEmail"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Enter your email"
+                android:background="@drawable/rounded_edittext"
+                android:padding="12dp"
+                android:inputType="textEmailAddress" />
+
+            <Button
+                android:id="@+id/subscribeButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Subscribe"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#295818"
+                android:textAllCaps="false"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/inika_regular"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Footer -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#295818"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Niche"
+                android:textSize="36sp"
+                android:textColor="#DCECD5"
+                android:fontFamily="@font/italianno_regular"
+                android:gravity="center"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Crafting beautiful spaces, one piece at a time"
+                android:textSize="16sp"
+                android:textColor="#B8D4AA"
+                android:gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Contact Info -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📍 123 Design Street, Creative City\n📞 +91 98765 43210\n✉️ hello@niche-design.in"
+                android:textColor="#DCECD5"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Social Links -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/ic_instagram"
+                    android:background="?attr/selectableItemBackgroundBorderless" />
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/ic_facebook"
+                    android:background="?attr/selectableItemBackgroundBorderless" />
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/ic_pinterest"
+                    android:background="?attr/selectableItemBackgroundBorderless" />
+            </LinearLayout>
+
+            <!-- Copyright -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="© 2024 Niche Design. All rights reserved."
+                android:textSize="12sp"
+                android:textColor="#B8D4AA"
+                android:gravity="center"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

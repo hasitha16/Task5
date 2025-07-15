@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="niche">#295818</color>
+    <color name="bg">#DCECD5</color>
+    <color name="custom_item_bg">#295818</color>
+    <color name="gray_800">#1f2937</color>
+    <color name="gray_600">#4b5563</color>
+    <color name="gray_500">#6b7280</color>
+    <color name="gray_700">#374151</color>
+    <color name="gray_400">#9ca3af</color>
+    <color name="gray_200">#e5e7eb</color>
+    <color name="green_50">#F0FDF4</color>
+    <color name="green_100">#DCFCE7</color>
+    <color name="green_200">#bbf7d0</color>
+    <color name="green_700">#15803d</color>
+    <color name="green_800">#166534</color>
+
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="lightGray">#E0E0E0</color>
+    <color name="darkGray">#757575</color>
+
+    <color name="backgroundColor">#F5F5F5</color>
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#757575</color>
+
+    <!-- Primary Colors -->
+    <color name="primary_color">#2196F3</color>
+    <color name="primary_dark">#1976D2</color>
+    <color name="primary_light">#BBDEFB</color>
+
+    <!-- Accent Colors -->
+    <color name="accent_color">#FF4081</color>
+
+    <!-- Background Colors -->
+    <color name="background_color">#FAFAFA</color>
+    <color name="surface_color">#FFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#BDBDBD</color>
+
+    <!-- Other Colors -->
+    <color name="light_gray">#F5F5F5</color>
+    <color name="medium_gray">#E0E0E0</color>
+    <color name="dark_gray">#424242</color>
+
+    <!-- Status Colors -->
+    <color name="success_color">#4CAF50</color>
+    <color name="error_color">#F44336</color>
+    <color name="warning_color">#FF9800</color>
+
+</resources>

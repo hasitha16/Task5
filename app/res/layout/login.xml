@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#DCECD5"
+    android:padding="38dp"
+    android:gravity="center_horizontal"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="166dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/italianno_regular"
+        android:text="Niche"
+        android:textAlignment="center"
+        android:textColor="#295818"
+        android:textSize="90sp" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter username"
+        android:textSize="25sp"
+        android:background="#CDE5C2"
+        android:padding="8dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="18dp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter password"
+        android:inputType="textPassword"
+        android:textSize="25sp"
+        android:background="#CDE5C2"
+        android:padding="8dp"
+        android:layout_marginBottom="36dp" />
+
+    <Button
+        android:id="@+id/sub_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textSize="24sp"
+        android:backgroundTint="#AB295818" />
+
+    <TextView
+        android:id="@+id/no_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account? Sign up"
+        android:textAlignment="center"
+        android:textColor="#343434"
+        android:textSize="20sp"
+        android:layout_marginTop="24dp" />
+</LinearLayout>

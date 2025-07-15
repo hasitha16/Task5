@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome!"
+        android:textSize="20sp"
+        android:layout_margin="16dp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="#DCECD5"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:id="@+id/mainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Top bar layout with search -->
+            <LinearLayout
+                android:id="@+id/topBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="8dp">
+
+                <!-- Row 1: Brand name + Cart + Sidebar -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- Brand Name -->
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/italianno_regular"
+                        android:text="Niche"
+                        android:textColor="#295818"
+                        android:textSize="48sp"
+                        android:layout_marginTop="8dp" />
+
+                    <!-- Cart Button - Using RelativeLayout -->
+                    <RelativeLayout
+                        android:id="@+id/cartButton"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/cartIcon"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_card"
+                            android:contentDescription="Shopping Cart"
+                            android:layout_centerInParent="true"
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:maxWidth="32dp"
+                            android:maxHeight="32dp" />
+
+                        <TextView
+                            android:id="@+id/cartBadge"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:background="@drawable/badge_background"
+                            android:text="3"
+                            android:textSize="9sp"
+                            android:textColor="@android:color/white"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:maxLines="1"
+                            android:includeFontPadding="false" />
+                    </RelativeLayout>
+
+                    <!-- Sidebar Icon -->
+                    <LinearLayout
+                        android:id="@+id/sidebarIcon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:gravity="center"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:contentDescription="Open navigation menu">
+
+                        <View
+                            android:layout_width="24dp"
+                            android:layout_height="2dp"
+                            android:layout_marginBottom="4dp"
+                            android:background="#295818" />
+
+                        <View
+                            android:layout_width="24dp"
+                            android:layout_height="2dp"
+                            android:layout_marginBottom="4dp"
+                            android:background="#295818" />
+
+                        <View
+                            android:layout_width="24dp"
+                            android:layout_height="2dp"
+                            android:background="#295818" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="#8F295818" />
+
+                <!-- Row 2: Search bar and icon -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/searchEditText"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:hint="Search"
+                        android:background="@drawable/rounded_edittext"
+                        android:padding="8dp"
+                        android:textColorHint="#888"
+                        android:inputType="text"
+                        android:layout_marginEnd="8dp" />
+
+                    <ImageView
+                        android:id="@+id/searchIcon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_search"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:padding="12dp"
+                        android:scaleType="centerInside"
+                        android:adjustViewBounds="true"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:contentDescription="Search"
+                        android:maxWidth="24dp"
+                        android:maxHeight="24dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Image Scroll -->
+            <HorizontalScrollView
+                android:id="@+id/imageScroller"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- 3 Items -->
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/dine"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/dine"
+                            android:adjustViewBounds="true"
+                            android:maxWidth="150dp"
+                            android:maxHeight="200dp"
+                            android:contentDescription="Dining set category" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="dining set"
+                            android:fontFamily="@font/inika_regular"
+                            android:textColor="#000"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/couch"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/couch"
+                            android:adjustViewBounds="true"
+                            android:maxWidth="150dp"
+                            android:maxHeight="200dp"
+                            android:contentDescription="Couch category" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="couch"
+                            android:fontFamily="@font/inika_regular"
+                            android:textColor="#000"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/bed"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/bed"
+                            android:adjustViewBounds="true"
+                            android:maxWidth="150dp"
+                            android:maxHeight="200dp"
+                            android:contentDescription="Bed category" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="bed"
+                            android:fontFamily="@font/inika_regular"
+                            android:textColor="#000"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Dots -->
+            <LinearLayout
+                android:id="@+id/dotLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center_horizontal">
+
+                <View
+                    android:id="@+id/dot1"
+                    android:layout_width="7dp"
+                    android:layout_height="7dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/dot_active" />
+
+                <View
+                    android:id="@+id/dot2"
+                    android:layout_width="7dp"
+                    android:layout_height="7dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/dot_inactive" />
+
+                <View
+                    android:id="@+id/dot3"
+                    android:layout_width="7dp"
+                    android:layout_height="7dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/dot_inactive" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="#8F295818" />
+
+            <!-- Chair Section - Using RelativeLayout -->
+            <RelativeLayout
+                android:id="@+id/chairSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp">
+
+                <ImageView
+                    android:id="@+id/chair"
+                    android:layout_width="198dp"
+                    android:layout_height="298dp"
+                    android:src="@drawable/chair"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="200dp"
+                    android:maxHeight="300dp"
+                    android:layout_alignParentStart="true"
+                    android:contentDescription="Chair category" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/backgroundText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OWN\nTHE\nMOMENT"
+                        android:textSize="30sp"
+                        android:textColor="#62300E"
+                        android:fontFamily="@font/inika_regular"
+                        android:textStyle="bold"
+                        android:gravity="left" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Feel the\ncomfort"
+                        android:textSize="24sp"
+                        android:textColor="#8C6B48" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/productsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:clipToPadding="false"
+                android:scrollbars="vertical"
+                android:padding="8dp"
+                android:nestedScrollingEnabled="false" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- Vase Section - Using RelativeLayout -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="-210dp">
+
+                    <View
+                        android:id="@+id/outerCircle"
+                        android:layout_width="300dp"
+                        android:layout_height="300dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/outer_circle" />
+
+                    <ImageView
+                        android:id="@+id/vase"
+                        android:layout_width="250dp"
+                        android:layout_height="250dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/inner_circle"
+                        android:clipToOutline="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/vase"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="250dp"
+                        android:maxHeight="250dp"
+                        android:contentDescription="Vase category" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inika_regular"
+                    android:text="DESIGNS\nTAILORED FOR\nEVERY SETTING"
+                    android:textColor="#5C351C"
+                    android:textSize="30dp"
+                    android:layout_marginTop="-60dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:text="refined your space, with\nour new designs"
+                    android:textColor="#B07B4F"
+                    android:textSize="30dp"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="36dp">
+
+                <ImageView
+                    android:id="@+id/cup1"
+                    android:layout_width="0dp"
+                    android:layout_height="262dp"
+                    android:layout_marginLeft="-30dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/center_straight"
+                    android:clipToOutline="true"
+                    android:src="@drawable/cup1"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="300dp"
+                    android:contentDescription="Cupboard category" />
+
+                <ImageView
+                    android:id="@+id/cup2"
+                    android:layout_width="0dp"
+                    android:layout_height="262dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/center_straight"
+                    android:clipToOutline="true"
+                    android:src="@drawable/cup2"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="300dp"
+                    android:contentDescription="Cupboard category" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:layout_gravity="start">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#8D5438"
+                        android:textSize="24dp"
+                        android:text="CUSTOMIZE\nYOUR\nDESIGNS"
+                        android:fontFamily="@font/inika_regular"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#BD8958"
+                        android:textSize="24dp"
+                        android:text="with us"
+                        android:fontFamily="sans-serif"
+                        android:textStyle="italic"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- NEW: Why Choose Niche Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp"
+                android:padding="16dp"
+                android:background="@drawable/rounded_background">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="WHY CHOOSE NICHE?"
+                    android:textSize="28sp"
+                    android:textColor="#295818"
+                    android:fontFamily="@font/inika_regular"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_check"
+                        android:layout_marginEnd="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:scaleType="centerInside"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="24dp"
+                        android:maxHeight="24dp"
+                        android:contentDescription="Check mark" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Premium Quality Materials"
+                        android:textSize="18sp"
+                        android:textColor="#5C351C"
+                        android:fontFamily="@font/inika_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_check"
+                        android:layout_marginEnd="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:scaleType="centerInside"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="24dp"
+                        android:maxHeight="24dp"
+                        android:contentDescription="Check mark" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Custom Design Solutions"
+                        android:textSize="18sp"
+                        android:textColor="#5C351C"
+                        android:fontFamily="@font/inika_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_check"
+                        android:layout_marginEnd="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:scaleType="centerInside"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="24dp"
+                        android:maxHeight="24dp"
+                        android:contentDescription="Check mark" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sustainable and Eco-Friendly"
+                        android:textSize="18sp"
+                        android:textColor="#5C351C"
+                        android:fontFamily="@font/inika_regular" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- NEW: Customer Testimonial Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="32dp"
+                android:padding="20dp"
+                android:background="#B8D4AA"
+                android:layout_marginHorizontal="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="❝"
+                    android:textSize="60sp"
+                    android:textColor="#295818"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Niche transformed our living space into a sanctuary. The attention to detail and quality is unmatched!"
+                    android:textSize="20sp"
+                    android:textColor="#295818"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="italic"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="— Tay Tawan"
+                    android:textSize="16sp"
+                    android:textColor="#5C351C"
+                    android:fontFamily="@font/inika_regular"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <!-- NEW: Newsletter Signup -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="32dp"
+                android:padding="20dp"
+                android:background="#F0F8ED">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="STAY UPDATED"
+                    android:textSize="24sp"
+                    android:textColor="#295818"
+                    android:fontFamily="@font/inika_regular"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Get the latest design trends and exclusive offers"
+                    android:textSize="16sp"
+                    android:textColor="#5C351C"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp" />
+
+                <EditText
+                    android:id="@+id/emailInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Enter your email"
+                    android:background="@drawable/rounded_edittext"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:inputType="textEmailAddress" />
+
+                <Button
+                    android:id="@+id/subscribeBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="SUBSCRIBE"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/rounded_button"
+                    android:fontFamily="@font/inika_regular"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- NEW: Footer -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="32dp"
+                android:padding="24dp"
+                android:background="#295818">
+
+                <!-- Footer Brand -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Niche"
+                    android:textSize="36sp"
+                    android:textColor="#DCECD5"
+                    android:fontFamily="@font/italianno_regular"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Crafting beautiful spaces, one piece at a time"
+                    android:textSize="16sp"
+                    android:textColor="#B8D4AA"
+                    android:gravity="center"
+                    android:layout_marginBottom="24dp" />
+
+                <!-- Contact Info -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="CONTACT US"
+                        android:textSize="18sp"
+                        android:textColor="#DCECD5"
+                        android:fontFamily="@font/inika_regular"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="📍 123 Design Street, Creative City"
+                        android:textSize="14sp"
+                        android:textColor="#B8D4AA"
+                        android:gravity="center"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="📞 +1 (555) 123-NICHE"
+                        android:textSize="14sp"
+                        android:textColor="#B8D4AA"
+                        android:gravity="center"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="✉️ hello@niche-design.com"
+                        android:textSize="14sp"
+                        android:textColor="#B8D4AA"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- Social Media -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp">
+
+                    <ImageView
+                        android:id="@+id/facebookIcon"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_facebook"
+                        android:layout_marginHorizontal="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:padding="4dp"
+                        android:scaleType="centerInside"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="32dp"
+                        android:maxHeight="32dp"
+                        android:contentDescription="Facebook" />
+
+                    <ImageView
+                        android:id="@+id/instagramIcon"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_instagram"
+                        android:layout_marginHorizontal="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:padding="4dp"
+                        android:scaleType="centerInside"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="32dp"
+                        android:maxHeight="32dp"
+                        android:contentDescription="Instagram" />
+
+                    <ImageView
+                        android:id="@+id/pinterestIcon"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_pinterest"
+                        android:layout_marginHorizontal="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:padding="4dp"
+                        android:scaleType="centerInside"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="32dp"
+                        android:maxHeight="32dp"
+                        android:contentDescription="Pinterest" />
+                </LinearLayout>
+
+                <!-- Copyright -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#B8D4AA"
+                    android:layout_marginBottom="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="© 2024 Niche Design. All rights reserved."
+                    android:textSize="12sp"
+                    android:textColor="#B8D4AA"
+                    android:gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/sidebar_gradient"
+        app:headerLayout="@layout/nav_header"
+        app:itemIconTint="@color/green_selector"
+        app:itemTextColor="@color/green_selector"
+        app:itemBackground="@drawable/menu_item_selector"
+        app:menu="@menu/nav_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
